@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            
+            background-image: url("https://img.freepik.com/free-vector/gradient-stock-market-concept_23-2149166910.jpg?t=st=1737629495~exp=1737633095~hmac=1ae2a02ae07b8190d2d28842c52eace90600aa0007382f0e29417bea7f52bbe0&w=996");
+            background-size: cover; /* Ensure the image covers the screen */
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+        }
+        #convertbtn:active {
+            transform: scale(0.95);
+            background-color: #3e8e41; /* Darker green */
+            transition: transform 0.1s ease, background-color 0.1s ease;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+.bounce {
+    animation: bounce 0.3s ease-out;
+}
+
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+      transform: translate(-50%, -50%);
+            background-image: url("https://images.pexels.com/photos/3793689/pexels-photo-3793689.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-width: 5px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            gap: 20px;
+            text-align: center;
+        }
+
+        #header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 6px;
+        }
+        label{
+            font-weight:bold;
+        }
+        select, input {
+            width: calc(100% - 20px);
+            height: 40px;
+            margin: 10px auto;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: rgba(0, 0, 0, 0.511);
+            color: #f3f4f6;
+        }
+
+        #convertbtn {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #convertbtn:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 500px) {
+            #container {
+                padding: 10px;
+                gap: 15px;
+            }
+
+            select, input, #convertbtn {
+                width: calc(100% - 10px);
+            }
+        }
+    </style>
+    <script src="converter.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <div id="header">Currency Converter</div>
+        <div>
+            <label for="fcurr" style="display: block; color: #fff;">From Currency:</label>
+            <select id="fcurr" aria-label="From Currency"></select>
+        </div>
+        <div>
+            <label for="tcurr" style="display: block; color: #fff;">To Currency:</label>
+            <select id="tcurr" aria-label="To Currency"></select>
+        </div>
+        <div>
+            <label for="amount" style="display: block; color: #fff;">Amount:</label>
+            <input id="amount" type="number" aria-label="Amount" placeholder="Enter amount">
+        </div>
+        <div>
+            <label for="resamount" style="display: block; color: #fff;">Converted Amount:</label>
+            <input id="resamount" type="number" aria-label="Converted Amount" readonly>
+        </div>
+        <button id="convertbtn">Convert</button>
+    </div>
+</body>
+</html>
